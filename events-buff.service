@@ -1,0 +1,15 @@
+[Unit]
+Description=Loading of kafka data into cassandra
+After=network.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+ExecStart=/srv/events-buff/loadevts.py
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
